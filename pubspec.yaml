@@ -1,0 +1,32 @@
+name: weather_apps
+description: A new Flutter project.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.6 <3.0.0"
+
+dependencies:
+  bloc: ^8.0.3
+  cached_network_image: ^3.2.1
+  cupertino_icons: ^1.0.2
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.0.1
+  http: ^0.13.4
+  intl: ^0.17.0
+  json_annotation: ^4.6.0
+  kiwi: ^4.0.2
+  mocktail: ^0.3.0
+
+dev_dependencies:
+  build_runner: ^2.2.0
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+  json_serializable: ^6.3.1
+  kiwi_generator: ^4.0.2
+
+flutter:
+  uses-material-design: true
