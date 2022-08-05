@@ -79,6 +79,16 @@ class WeatherDetailsScreen extends StatelessWidget {
                   tempWidget('Temp (min)', weatherData.main.tempMin),
                   tempWidget('Temp (max)', weatherData.main.tempMax)
                 ],
+              ),
+              const SizedBox(
+                height: 16,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  windWidget('Wind', weatherData.windData.speed),
+                  windWidget('Degree', weatherData.windData.degree)
+                ],
               )
             ],
           ),
@@ -92,6 +102,18 @@ class WeatherDetailsScreen extends StatelessWidget {
           Text(title),
           Text(
             '${temperatureToCelcius(temp).toStringAsFixed(1)}°C',
+            style: const TextStyle(
+              fontWeight: FontWeight.w600,
+            ),
+          )
+        ],
+      );
+
+  Widget windWidget(String title, num temp) => Column(
+        children: [
+          Text(title),
+          Text(
+            '$temp',
             style: const TextStyle(
               fontWeight: FontWeight.w600,
             ),

@@ -1,5 +1,6 @@
 import 'package:weather_apps/data/models/weather_main_model.dart';
 import 'package:weather_apps/data/models/weather_props_model.dart';
+import 'package:weather_apps/data/models/wind_model.dart';
 import 'package:weather_apps/domain/entities/weather_entity.dart';
 
 class WeatherModel extends WeatherEntity {
@@ -7,11 +8,8 @@ class WeatherModel extends WeatherEntity {
     required int dt,
     required WeatherMainModel main,
     required List<WeatherPropsModel> weatherProp,
-  }) : super(
-          dt: dt,
-          main: main,
-          weatherProps: weatherProp,
-        );
+    required WindModel windData,
+  }) : super(dt: dt, main: main, weatherProps: weatherProp, windData: windData);
 
   factory WeatherModel.fromJson(dynamic json) => WeatherModel(
         dt: json['dt'],
@@ -20,6 +18,9 @@ class WeatherModel extends WeatherEntity {
             .map((data) =>
                 WeatherPropsModel.fromJson(data as Map<String, dynamic>))
             .toList(),
+        windData: WindModel.fromJson(
+          json['wind'],
+        ),
       );
 
   static List<WeatherModel> fromJsonList(List<dynamic> jsonList) =>
